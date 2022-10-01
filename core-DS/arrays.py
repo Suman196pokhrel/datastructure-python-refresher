@@ -1,9 +1,10 @@
 import os
+import time
 from colorama import Fore
 
 
 # GLOABL VARS
-user_array = []
+user_array = [11, 22 , 33, 44, 55]
 
 def create_Array():
     global user_array
@@ -28,8 +29,30 @@ def create_Array():
         return None
 
 
+def insert_element():
+    global user_array
+    print(Fore.YELLOW+"""
+    --------------INSERTING AN ELEMENT IN ARRAY------------------
     
-
+    Choose any of the following options
+    1. Insertr at beginning
+    2. Insert at middle
+    3. Insert at last
+    4. Exit
+    """)
+    inp = int(input())
+    if inp<=3 and inp >=1:
+        if inp==1:
+            elem = int(input("Provide an element to insert : "))
+            user_array.insert(0,elem)
+        elif inp==2:
+            elem = (input("Provide  index_element) Example: 3 22 :  ").split())
+            user_array.insert(int(elem[0]), int(elem[-1]))
+        elif inp==3:
+            elem = int(input("Provide an element to insert : "))
+            user_array.append(elem)
+        else:
+            return None
 
 
 
@@ -37,7 +60,7 @@ def create_Array():
 if __name__ == "__main__":
     while True:
         os.system("cls")
-        print(Fore.RED+f"""
+        print(Fore.CYAN+f"""
         _____________________________________________
         ----------Array Operation Station------------ 
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -51,13 +74,12 @@ if __name__ == "__main__":
         Choose any of the following Operations
 
         1. Create New Array                                      
-        2. Traverse
-        3. Insert Element
-        4. Delete Element
-        5. Search index of elem
-        6. Sort Array
-        7. Merge Arrays
-        8. Exit
+        2. Insert Element
+        3. Delete Element
+        4. Search index of elem
+        5. Sort Array
+        6. Merge Arrays
+        7. Exit
 
         """)
         user_inp = input()
@@ -65,7 +87,7 @@ if __name__ == "__main__":
         if(user_inp=="1"):
             create_Array()
         elif user_inp =="2":
-            pass
+            insert_element()
         elif user_inp =="3":
             pass
         elif user_inp =="4":
@@ -73,8 +95,6 @@ if __name__ == "__main__":
         elif user_inp =="5":
             pass
         elif user_inp =="6":
-            pass
-        elif user_inp =="7":
             pass
         else:
             print("Shutting Down Program")
