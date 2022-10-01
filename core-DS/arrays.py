@@ -6,6 +6,7 @@ from colorama import Fore
 # GLOABL VARS
 # DEFAULT VALUE
 user_array = [11, 22 , 33, 44, 55]
+user_prev_array = [11, 22, 33, 44, 55]
 
 def create_Array():
     os.system("cls")
@@ -85,6 +86,7 @@ def delete_element():
         else:
             return None
 
+
 def search_first_index():
     os.system("cls")
     global user_array
@@ -117,7 +119,8 @@ if __name__ == "__main__":
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         """,end="")
         print(Fore.BLUE+ f"""
-        {user_array}
+        previous State:  {user_prev_array}
+        current State :  {user_array}
         """)
 
         print(Fore.GREEN +"""
@@ -128,12 +131,11 @@ if __name__ == "__main__":
         2. Insert Element
         3. Delete Element
         4. Search index of elem
-        5. Sort Array
-        6. Merge Arrays
-        7. Exit
+        5. Exit
 
         """)
         user_inp = input()
+        user_prev_array = user_array [:]
 
         if(user_inp=="1"):
             create_Array()
@@ -143,10 +145,7 @@ if __name__ == "__main__":
             delete_element()
         elif user_inp =="4":
             search_first_index()
-        elif user_inp =="5":
-            pass
-        elif user_inp =="6":
-            pass
         else:
             print("Shutting Down Program")
             break
+        user_prev_array
