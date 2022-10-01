@@ -1,5 +1,4 @@
 import os
-import sys
 import time
 from colorama import Fore
 
@@ -86,7 +85,27 @@ def delete_element():
         else:
             return None
 
+def search_first_index():
+    os.system("cls")
+    global user_array
+    print(Fore.YELLOW+"""
+    --------------SEARCH INDEX OF FIRST ELEMENT IN ARRAY------------------
+    
+    Choose any of the following options
+    1. Enter the Element to search for
+    2. Exit
 
+    """)
+    inp = int(input())
+    if inp<=2 and inp >=1:
+        if inp==1:
+            val = int(input(f"Enter the element to search for {user_array}: \n "))
+            ind = user_array.index(val)
+            print(f"The index of first appearance of {val} is {ind}")
+            time.sleep(5)
+        
+        else:
+            return None
 
 
 if __name__ == "__main__":
@@ -123,7 +142,7 @@ if __name__ == "__main__":
         elif user_inp =="3":
             delete_element()
         elif user_inp =="4":
-            pass
+            search_first_index()
         elif user_inp =="5":
             pass
         elif user_inp =="6":
