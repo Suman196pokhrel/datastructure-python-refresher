@@ -1,4 +1,5 @@
 import os
+from colorama import Fore
 
 
 # GLOABL VARS
@@ -6,7 +7,7 @@ user_array = []
 
 def create_Array():
     global user_array
-    print("""
+    print(Fore.YELLOW+"""
     --------------CREATE AN ARRAY------------------
     
     Choose any of the following options
@@ -18,7 +19,7 @@ def create_Array():
     if inp == "1":
         try:
             print(f"Enter  elements for your array as Example: 1_2_3_4_5 ")
-            user_array =list( map(int,input().split()))
+            user_array =list( map(int,input("\x1B[31m "+"").split()))
             print("Array created => ",user_array)
             return user_array
         except Exception as e:
@@ -36,10 +37,16 @@ def create_Array():
 if __name__ == "__main__":
     while True:
         os.system("cls")
-        print(f"""
+        print(Fore.RED+f"""
         _____________________________________________
         ----------Array Operation Station------------ 
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        """,end="")
+        print(Fore.BLUE+ f"""
         {user_array}
+        """)
+
+        print(Fore.GREEN +"""
 
         Choose any of the following Operations
 
