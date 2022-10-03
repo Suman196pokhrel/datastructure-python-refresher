@@ -1,4 +1,3 @@
-import os
 
 class Node:
     def __init__(self,data=None,next=None):
@@ -21,7 +20,6 @@ class LinkedList:
                 itr = itr.next
             return list_str
 
-
     def __len__(self):
         if self.head is None:
             return 0
@@ -32,7 +30,6 @@ class LinkedList:
                 count +=1
                 itr = itr.next
             return count
-
 
     def insert_at_begining(self,data):
         node = Node(data,self.head)
@@ -63,7 +60,6 @@ class LinkedList:
                     itr = itr.next
                 node = Node(data,itr.next)
                 itr.next = node
-
 
     def generate_llist_from_list(self,user_list):
         self.head = None
