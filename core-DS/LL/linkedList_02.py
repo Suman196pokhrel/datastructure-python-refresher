@@ -1,4 +1,6 @@
 
+
+
 class Node:
     def __init__(self,data=None,next=None):
         self.data = data
@@ -13,12 +15,40 @@ class LinkedList:
             return "Linked List is Empty"
         else:
             itr = self.head
-            list_str = ""
+            list_str = "self.head"
             while itr:
                 
-                list_str  = list_str + " --> " + str(itr.data) 
+                list_str  = list_str + " --> " +f"[ {str(itr.data)} ]" 
                 itr = itr.next
             return list_str
+
+    def deep_print(self):
+        if self.head is None:
+            return "Linked List is Empty"
+        else:
+            itr = self.head
+            list_str = "self.head"
+            while itr:
+                
+                list_str  = list_str + " --> " +f"[{str(itr.data)} - {hex(id(itr))} | {hex(id(itr.next))}]" 
+                itr = itr.next
+            return list_str
+
+    def box_print(self):
+        if self.head is None:
+            return "Linked List is Empty"
+        else:
+            itr = self.head
+            list_str = "self.head ==> "
+            while itr:
+                str_1 = f"""
+            |   {hex(id(itr))}  |
+              -------------------- ===>
+            |   {str(itr.data)}             |"""
+            
+                list_str  = (list_str  + str_1)
+                itr = itr.next
+            print(list_str)
 
     def __len__(self):
         if self.head is None:
@@ -87,14 +117,7 @@ class LinkedList:
 if __name__ == "__main__":
     llist = LinkedList()
 
-    llist.generate_llist_from_list(["Login Page","Dashboard Page","Profile Page","Personel Info page"])
-    print(llist)
-    llist.insert_at("Test1",0)
-    print(llist)
-    llist.insert_at("Test1",len(llist))
-    print(llist)
+    llist.generate_llist_from_list([11,22,33,44,55])
+    llist.box_print()
 
-    llist.insert_at("Test1",2)
-
-    print(llist)
 
