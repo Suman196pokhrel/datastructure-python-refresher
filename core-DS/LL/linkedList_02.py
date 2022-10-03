@@ -43,10 +43,12 @@ class LinkedList:
             for _ in range(num):
                 print("-"*23,end=f"{' '*3}      ")
             print("")
+            # print("Head ==> ", end="")
             while itr:
                 print(f"|{str(itr.data).center(5)}|{str(hex(id(itr.next))).center(15)}|",end=f"{' '*3}==>   ")
                 itr = itr.next
-            print("")
+            
+            print("None")
             for _ in range(num):
                 print("-"*23,end=f"{' '*3}      ")
             print("")
@@ -56,9 +58,6 @@ class LinkedList:
             print("")
             for _ in range(num):
                 print("-"*23,end=f"{' '*3}      ")
-
-                
-           
            
 
     def __len__(self):
