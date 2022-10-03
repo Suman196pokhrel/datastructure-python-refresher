@@ -39,16 +39,27 @@ class LinkedList:
             return "Linked List is Empty"
         else:
             itr = self.head
-            list_str = "self.head ==> "
+            num = len(self)
+            for _ in range(num):
+                print("-"*23,end=f"{' '*3}      ")
+            print("")
             while itr:
-                str_1 = f"""
-            |   {hex(id(itr))}  |
-              -------------------- ===>
-            |   {str(itr.data)}             |"""
-            
-                list_str  = (list_str  + str_1)
+                print(f"|{str(itr.data).center(5)}|{str(hex(id(itr.next))).center(15)}|",end=f"{' '*3}==>   ")
                 itr = itr.next
-            print(list_str)
+            print("")
+            for _ in range(num):
+                print("-"*23,end=f"{' '*3}      ")
+            print("")
+            for i in range(num):
+                print("|",f"val".center(5),f"|  Next       |".center(15),end=f"{' '*3}      ")
+                
+            print("")
+            for _ in range(num):
+                print("-"*23,end=f"{' '*3}      ")
+
+                
+           
+           
 
     def __len__(self):
         if self.head is None:
