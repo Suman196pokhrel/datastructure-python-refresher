@@ -1,6 +1,9 @@
 
 
 
+from logging import raiseExceptions
+
+
 class Node:
     def __init__(self,data=None,next=None):
         self.data = data
@@ -59,7 +62,6 @@ class LinkedList:
             for _ in range(num):
                 print("-"*23,end=f"{' '*3}      ")
            
-
     def __len__(self):
         if self.head is None:
             return 0
@@ -120,14 +122,29 @@ class LinkedList:
                     itr = itr.next
                 itr.next = itr.next.next
 
+    def search_by_value(self,value):
+        if self.head is None:
+            print("Linked list is empty ")
+        else:
+            itr = self.head
+            count = 0
+            while itr:
+                if itr.data == value:
+                    print(f"{value} found at index {count}")
+                    break
+                count +=1
+                itr = itr.next
+            if count == len(self):
+                print("Your value is not present in the linked list")
 
-
+                
   
 
 if __name__ == "__main__":
     llist = LinkedList()
 
-    llist.generate_llist_from_list([11,22,33,44,55])
-    llist.box_print()
+    llist.generate_llist_from_list([11,22,33,44])
+    print(llist)
+    llist.search_by_value(55)
 
 
