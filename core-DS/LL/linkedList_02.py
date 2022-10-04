@@ -35,7 +35,7 @@ class LinkedList:
                 
                 list_str  = list_str + " --> " +f"[{str(itr.data)} - {hex(id(itr))} | {hex(id(itr.next))}]" 
                 itr = itr.next
-            return list_str
+            print(list_str)
 
     def box_print(self):
         if self.head is None:
@@ -137,14 +137,32 @@ class LinkedList:
             if count == len(self):
                 print("Your value is not present in the linked list")
 
+    def remove_by_Value(self,value):
+        if self.head is None:
+            print("Linkedlist is empty")
+        
+        elif self.head.data == value:
+            self.head = self.head.next
+
+        
+        else:
+            itr_1 = self.head
+            while  itr_1.next.data != value:
+                itr_1 = itr_1.next
+            rem_node = itr_1.next
+            itr_1.next = itr_1.next.next
+            rem_node.next = None
+
+            
                 
   
 
 if __name__ == "__main__":
     llist = LinkedList()
 
-    llist.generate_llist_from_list([11,22,33,44])
-    print(llist)
+    llist.generate_llist_from_list([11,22,33,44,55])
     llist.search_by_value(55)
+    llist.remove_by_Value(11)
+    print(llist)
 
 
