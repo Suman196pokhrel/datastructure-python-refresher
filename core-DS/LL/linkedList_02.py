@@ -1,9 +1,5 @@
 
 
-
-from logging import raiseExceptions
-
-
 class Node:
     def __init__(self,data=None,next=None):
         self.data = data
@@ -153,7 +149,23 @@ class LinkedList:
             itr_1.next = itr_1.next.next
             rem_node.next = None
 
-            
+    def reverse_llist(self,type_1=None):
+        if self.head is None:
+            print("Linked List is empty")
+        else:
+            curr = self.head
+            nex = self.head.next
+            prev = None
+            while nex:
+                curr.next = prev
+                prev = curr
+                curr = nex
+                nex = nex.next
+            curr.next = prev
+            self.head = curr
+        
+
+
                 
   
 
@@ -161,8 +173,9 @@ if __name__ == "__main__":
     llist = LinkedList()
 
     llist.generate_llist_from_list([11,22,33,44,55])
-    llist.search_by_value(55)
-    llist.remove_by_Value(11)
     print(llist)
+    llist.reverse_llist()
+    print(llist)
+    llist.search_by_value(55)
 
 
