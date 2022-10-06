@@ -20,6 +20,17 @@ class DoublyLinkedList:
                 
             return dllist
 
+    def __len__(self):
+        if self.head is None:
+            return 0
+        else:
+            itr = self.head
+            count = 1
+            while itr.next:
+                count +=1
+                itr = itr.next
+            return count
+
     def insert_at_start(self,data):
         if self.head is None:
             node = Node(data)
@@ -54,4 +65,5 @@ if __name__ == "__main__":
     dll = DoublyLinkedList()
     dll.generate_dll_from_list([11,22,33,44,55])
     print(dll)
+    print(len(dll))
 
