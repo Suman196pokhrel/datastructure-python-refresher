@@ -54,8 +54,20 @@ class DoublyLinkedList:
                 itr.next = node
                 node.prev = itr
                 
-
-
+    def insert_at(self,data,index):
+        if index >=len(self) or index <0:
+            print("Index Out of Range")
+        else:
+            if index == 0 :
+                self.insert_at_start(data)
+            else:
+                itr = self.head
+                for _ in range(index-1):
+                    itr = itr.next
+                node = Node(data,next=itr.next,prev=itr)
+                itr.next.prev = node
+                itr.next = node
+        
     def generate_dll_from_list(self,user_list):
         self.head = None
         for data in user_list:
@@ -65,5 +77,5 @@ if __name__ == "__main__":
     dll = DoublyLinkedList()
     dll.generate_dll_from_list([11,22,33,44,55])
     print(dll)
-    print(len(dll))
-
+    dll.insert_at(data=23,index=0)
+    print(dll)
