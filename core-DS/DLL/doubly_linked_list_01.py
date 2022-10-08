@@ -1,3 +1,6 @@
+from tkinter.tix import Select
+
+
 class Node:
     def __init__(self,data,next=None,prev=None):
         self.data = data
@@ -30,6 +33,13 @@ class DoublyLinkedList:
                 count +=1
                 itr = itr.next
             return count
+
+    def check_empty_dll(self,func):
+
+        def wrapper_func():
+           
+                func()
+        return wrapper_func
 
     def insert_at_start(self,data):
         if self.head is None:
@@ -94,11 +104,32 @@ class DoublyLinkedList:
                         itr = itr.next
                     itr.next.next.prev = itr
                     itr.next = itr.next.next
-                    
+           
+    def remove_front(self):
+        if self.head is None:
+            print("DLL is Empty")
+        else:
+            self.head = self.head.next
+
+    def remove_last(self):
+        if self.head is None:
+            print("DLL is Empty")
+        elif len(self) == 1:
+            self.head = None
+        else:
+            itr = self.head
+            while itr.next:
+                itr = itr.next
+            itr.prev.next = None
+        
+
+
+            
+
 
 if __name__ == "__main__":
     dll = DoublyLinkedList()
-    dll.generate_dll_from_list([11,22,33,44,55])
+    dll.generate_dll_from_list([55])
     print(dll)
-    dll.remove_at(5)
+    dll.remove_last()
     print(dll)
