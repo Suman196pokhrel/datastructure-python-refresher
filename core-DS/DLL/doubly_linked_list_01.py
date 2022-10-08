@@ -1,6 +1,3 @@
-from tkinter.tix import Select
-
-
 class Node:
     def __init__(self,data,next=None,prev=None):
         self.data = data
@@ -137,12 +134,27 @@ class DoublyLinkedList:
                 itr .next.prev = itr.prev
                 itr.prev.next = itr.next
 
+    def search_value(self,value):
+        if self.head is None:
+            print("DLL is Empty")
+        else:
+            count = 0
+            itr = self.head
+            while itr:
+                if itr.data == value:
+                    break
+                itr = itr.next
+                count +=1
+            if count == len(self):
+                print(f"Value {value} not found in the DLL")
+            else:
+                print(f"Value {value} was found at {count} index")
             
-
 
 if __name__ == "__main__":
     dll = DoublyLinkedList()
     dll.generate_dll_from_list([11,22,33,44,55])
     print(dll)
     dll.remove_by_value(11)
+    dll.search_value(99)
     print(dll)
