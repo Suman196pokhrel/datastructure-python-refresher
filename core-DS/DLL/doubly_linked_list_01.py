@@ -73,9 +73,13 @@ class DoublyLinkedList:
         for data in user_list:
             self.insert_at_end(data)
 
+    def remove_at(self,index):
+        pass
+
 if __name__ == "__main__":
     dll = DoublyLinkedList()
     dll.generate_dll_from_list([11,22,33,44,55])
     print(dll)
     dll.insert_at(data=23,index=0)
+    dll.remove_at(0)
     print(dll)
