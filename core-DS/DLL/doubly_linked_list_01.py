@@ -122,14 +122,27 @@ class DoublyLinkedList:
                 itr = itr.next
             itr.prev.next = None
         
-
+    def remove_by_value(self,value):
+        if self.head is None:
+            print("DLL is Empty")
+        else:
+            itr = self.head
+            while itr.data != value:
+                itr = itr.next
+            if itr.prev is None:
+                self.remove_front()
+            elif itr.next is None:
+                itr.prev.next = None
+            else:
+                itr .next.prev = itr.prev
+                itr.prev.next = itr.next
 
             
 
 
 if __name__ == "__main__":
     dll = DoublyLinkedList()
-    dll.generate_dll_from_list([55])
+    dll.generate_dll_from_list([11,22,33,44,55])
     print(dll)
-    dll.remove_last()
+    dll.remove_by_value(11)
     print(dll)
