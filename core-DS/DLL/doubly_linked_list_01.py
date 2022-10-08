@@ -74,12 +74,31 @@ class DoublyLinkedList:
             self.insert_at_end(data)
 
     def remove_at(self,index):
-        pass
+        if self.head is None:
+            print("DLL is empty")
+        else:
+            if index <0 or index >= len(self):
+                print(f"Index Out of Range ({0} - {len(self)})")
+            else:
+                if index == 0:
+                    self.head = self.head.next
+                elif index == len(self)-1:
+                    itr = self.head
+                    while itr.next.next:
+                        itr = itr.next
+                    itr.next = None
+                    
+                else:
+                    itr = self.head
+                    for _ in range(index-1):
+                        itr = itr.next
+                    itr.next.next.prev = itr
+                    itr.next = itr.next.next
+                    
 
 if __name__ == "__main__":
     dll = DoublyLinkedList()
     dll.generate_dll_from_list([11,22,33,44,55])
     print(dll)
-    dll.insert_at(data=23,index=0)
-    dll.remove_at(0)
+    dll.remove_at(5)
     print(dll)
