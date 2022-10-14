@@ -155,6 +155,3 @@ if __name__ == "__main__":
     dll = DoublyLinkedList()
     dll.generate_dll_from_list([11,22,33,44,55])
     print(dll)
-    dll.remove_by_value(11)
-    dll.search_value(99)
-    print(dll)
