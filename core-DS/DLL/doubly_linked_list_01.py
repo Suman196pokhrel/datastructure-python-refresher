@@ -150,8 +150,20 @@ class DoublyLinkedList:
             else:
                 print(f"Value {value} was found at {count} index")
             
+    def update_at(self,index,new_data):
+        if index <0 or index >= len(self):
+            print(f"Index out of range( 0 - {len(self)-1})")
+        elif self.head is None:
+            print("SLL is empty")
+        else:
+            itr  = self.head
+            for _ in range(index):
+                itr = itr.next
+            itr.data = new_data
 
 if __name__ == "__main__":
     dll = DoublyLinkedList()
     dll.generate_dll_from_list([11,22,33,44,55])
+    print(dll)
+    dll.update_at(index=2,new_data=333)
     print(dll)
