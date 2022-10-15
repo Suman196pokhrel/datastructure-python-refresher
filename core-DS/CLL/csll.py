@@ -89,7 +89,6 @@ class CircularLinkedList:
             itr.next = itr.next.next
             self.head = self.head.next
 
-
     def remove_at(self,index):
         if index <0 or index >=len(self):
             print(f"Index out of Range ( 0 - {len(self)-1})")
@@ -103,7 +102,6 @@ class CircularLinkedList:
                 for _ in range(index-1):
                     itr = itr.next
                 itr.next = itr.next.next
-
     
     def generate_csll(self,data):
         self.head = None
