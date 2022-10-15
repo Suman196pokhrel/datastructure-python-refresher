@@ -1,5 +1,4 @@
-from select import select
-from tkinter.messagebox import NO
+
 
 
 class Node:
@@ -80,10 +79,37 @@ class CircularLinkedList:
                 node.next = itr.next
                 itr.next = node
 
+    def remove_at_start(self):
+        if self.head is None:
+            print("CSLL is empty")
+        else:
+            itr = self.head
+            while itr.next is not self.head:
+                itr = itr.next
+            itr.next = itr.next.next
+            self.head = self.head.next
+
+
+    def remove_at(self,index):
+        if index <0 or index >=len(self):
+            print(f"Index out of Range ( 0 - {len(self)-1})")
+        elif self.head is None:
+            print("CSLL is empty")
+        else:
+            if index == 0:
+                self.remove_at_start()
+            else:
+                itr = self.head
+                for _ in range(index-1):
+                    itr = itr.next
+                itr.next = itr.next.next
+
+    
     def generate_csll(self,data):
         self.head = None
         for elem in data[::-1]:
             self.insert_at_start(elem)
+
 
 if __name__=="__main__":
     csll = CircularLinkedList()
@@ -95,4 +121,8 @@ if __name__=="__main__":
     print(csll)
     print(f"Length of CSLL => {len(csll)}")
     csll.insert_at(data=77,index=6)
+    print(csll)
+    csll.remove_at_start()
+    print(csll)
+    csll.remove_at(6)
     print(csll)
