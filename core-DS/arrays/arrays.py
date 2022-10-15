@@ -110,6 +110,32 @@ def search_first_index():
             return None
 
 
+def update_element_at():
+    os.system("cls")
+    global user_array
+    print(Fore.YELLOW+"""
+    --------------UPDATE ELEMENT IN ARRAY------------------
+    
+    Choose any of the following options
+    1. Enter the index of element to update at
+    2. Enter the value to update 
+    3. Exit
+
+    """)
+    inp = int(input())
+    if inp<=2 and inp >=1:
+        if inp==1:
+            val = input(f"Enter the index_element to update(Example : 2 33):  \n ").split()
+            user_array[int(val[0])] = int(val[1])
+        elif inp == 2:
+            val = input(f"Enter the prev_val_new_val to update(Example : 33_30):  \n ").split()
+            user_array[user_array.index(int(val[0]))] = int(val[1])
+            
+        
+        else:
+            return None 
+
+
 if __name__ == "__main__":
     while True:
         os.system("cls")
@@ -131,7 +157,8 @@ if __name__ == "__main__":
         2. Insert Element
         3. Delete Element
         4. Search index of elem
-        5. Exit
+        5. Update Element
+        6. Exit
 
         """)
         user_inp = input()
@@ -145,6 +172,8 @@ if __name__ == "__main__":
             delete_element()
         elif user_inp =="4":
             search_first_index()
+        elif user_inp =="5":
+            update_element_at()
         else:
             print("Shutting Down Program")
             break
