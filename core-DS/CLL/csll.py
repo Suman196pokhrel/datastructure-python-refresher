@@ -64,8 +64,21 @@ class CircularLinkedList:
             node.next = itr.next
             itr.next = node
 
-    def insert_at_mid(self,data,index):
-        pass
+    def insert_at(self,data,index):
+        if index < 0 or index >=len(self):
+            print(f"Index out of range ( 0 - {len(self)-1} )")
+        elif self.head is None:
+            print("CSLL is Empty")
+        else:
+            if index == 0:
+                self.insert_at_start(data)
+            else:
+                node = Node(data)
+                itr = self.head
+                for _ in range(index-1):
+                    itr = itr.next
+                node.next = itr.next
+                itr.next = node
 
     def generate_csll(self,data):
         self.head = None
@@ -81,3 +94,5 @@ if __name__=="__main__":
     csll.insert_at_end(66)
     print(csll)
     print(f"Length of CSLL => {len(csll)}")
+    csll.insert_at(data=77,index=6)
+    print(csll)
