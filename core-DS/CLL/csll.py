@@ -41,7 +41,17 @@ class CircularLinkedList:
             itr.next = self.head
              
     def insert_at_end(self,data):
-        pass
+        if self.head is None:
+            node = Node(data)
+            node.next = self.head
+            self.head = node
+        else:
+            itr = self.head
+            while itr.next is not self.head:
+                itr = itr.next
+            node = Node(data)
+            node.next = itr.next
+            itr.next = node
 
     def insert_at_mid(self,data):
         pass
@@ -54,5 +64,8 @@ class CircularLinkedList:
 if __name__=="__main__":
     csll = CircularLinkedList()
     csll.generate_csll(data=[11,22,33,44,55])
-
+    print(csll)
+    csll.insert_at_start(10)
+    print(csll)
+    csll.insert_at_end(66)
     print(csll)
