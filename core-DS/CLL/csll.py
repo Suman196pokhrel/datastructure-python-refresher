@@ -108,19 +108,21 @@ class CircularLinkedList:
         for elem in data[::-1]:
             self.insert_at_start(elem)
 
+    def update_value(self,index,new_data):
+        if index <0 or index >= len(self):
+            print(f"Index out of range( 0 - {len(self)-1})")
+        elif self.head is None:
+            print("SLL is empty")
+        else:
+            itr  = self.head
+            for _ in range(index):
+                itr = itr.next
+            itr.data = new_data
+
 
 if __name__=="__main__":
     csll = CircularLinkedList()
     csll.generate_csll(data=[11,22,33,44,55])
     print(csll)
-    csll.insert_at_start(10)
-    print(csll)
-    csll.insert_at_end(66)
-    print(csll)
-    print(f"Length of CSLL => {len(csll)}")
-    csll.insert_at(data=77,index=6)
-    print(csll)
-    csll.remove_at_start()
-    print(csll)
-    csll.remove_at(6)
+    csll.update_value(index=4,new_data=3333)
     print(csll)
