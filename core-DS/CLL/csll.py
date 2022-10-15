@@ -11,7 +11,6 @@ class CircularLinkedList:
     def __init__(self):
         self.head = None
 
-
     def __str__(self):
         if self.head is None:
             return "Circular Linked List is Empty"
@@ -24,8 +23,6 @@ class CircularLinkedList:
                 if itr is self.head:
                     break
             return csll
-
-
     
     def insert_at_start(self,data):
         if self.head is None:
@@ -49,13 +46,13 @@ class CircularLinkedList:
     def insert_at_mid(self,data):
         pass
 
+    def generate_csll(self,data):
+        self.head = None
+        for elem in data[::-1]:
+            self.insert_at_start(elem)
 
 if __name__=="__main__":
     csll = CircularLinkedList()
-    csll.insert_at_start(55)
-    csll.insert_at_start(44)
-    csll.insert_at_start(33)
-    csll.insert_at_start(22)
-    csll.insert_at_start(11)
+    csll.generate_csll(data=[11,22,33,44,55])
 
     print(csll)
