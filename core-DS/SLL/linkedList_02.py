@@ -1,5 +1,8 @@
 
 
+from hashlib import new
+
+
 class Node:
     def __init__(self,data=None,next=None):
         self.data = data
@@ -164,8 +167,16 @@ class LinkedList:
             curr.next = prev
             self.head = curr
         
-
-
+    def update_value(self,index,new_data):
+        if index <0 or index >= len(self):
+            print(f"Index out of range( 0 - {len(self)-1})")
+        elif self.head is None:
+            print("SLL is empty")
+        else:
+            itr  = self.head
+            for _ in range(index):
+                itr = itr.next
+            itr.data = new_data
                 
   
 
@@ -177,5 +188,7 @@ if __name__ == "__main__":
     llist.reverse_llist()
     print(llist)
     llist.search_by_value(55)
+    llist.update_value(index=0,new_data=444)
+    print(llist)
 
 

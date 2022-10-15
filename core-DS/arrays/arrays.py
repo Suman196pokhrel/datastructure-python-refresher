@@ -129,7 +129,7 @@ def update_element_at():
             user_array[int(val[0])] = int(val[1])
         elif inp == 2:
             val = input(f"Enter the prev_val_new_val to update(Example : 33_30):  \n ").split()
-            user_array[user_array.index(int(val[0]))] = int(val[1])
+            user_array[user_array.index(int(val[0]))] = (val[1])
             
         
         else:
@@ -175,6 +175,6 @@ if __name__ == "__main__":
         elif user_inp =="5":
             update_element_at()
         else:
-            print("Shutting Down Program")
+            print(Fore.WHITE+"Shutting Down Program")
             break
         user_prev_array
