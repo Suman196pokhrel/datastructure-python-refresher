@@ -1,7 +1,6 @@
 # In python hashmaps are implemented thought dictinaries . So you can directly use python dictionaries for your
 # hashmaps opoerations, if you wanna create your own hashmaps with custom features then following code should do the job
 
-from select import select
 
 
 class HashTable:
