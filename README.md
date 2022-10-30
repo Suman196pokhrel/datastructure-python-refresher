@@ -6,6 +6,8 @@
 <li> Single Linked List</li>
 <li> Double Linked List</li>
 <li> Circular Linked List</li>
+<li> Hash Tables</li>
+
 
 
 </ol>
