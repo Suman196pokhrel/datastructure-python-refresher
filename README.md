@@ -11,8 +11,6 @@
 <br>
 <h2><a href="https://www.hackerrank.com/spokhrel196">HackerRank Problems</a></h2>
 
-<br>
-
 <ol>
     <li>
         <ol>
