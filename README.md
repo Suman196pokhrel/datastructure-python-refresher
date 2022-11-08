@@ -7,6 +7,7 @@
 <li> Double Linked List</li>
 <li> Circular Linked List</li>
 <li> Hash Tables</li>
+<li> Stacks</li>
 </ol>
 <br>
 <h2><a href="https://www.hackerrank.com/spokhrel196">HackerRank Problems</a></h2>
