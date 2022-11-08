@@ -9,7 +9,7 @@
 <li> Hash Tables</li>
 </ol>
 <br>
-<h2>HackerRank Problems [![HackerRank Profile](https://img.shields.io/badge/HackerRank-Profile-brightgreen.svg)](https://www.hackerrank.com/spokhrel196) </h2>
+<h2><a href="https://www.hackerrank.com/spokhrel196">HackerRank Problems</a></h2>
 
 <br>
 
