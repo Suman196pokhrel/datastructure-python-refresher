@@ -39,6 +39,13 @@
             <li>Reverse-LL</li>
         </ol>
     </li>
+    <br>
+    <li>
+        <ol>
+            <h3>Stacks</h3>
+            <li>Maximum-Element</li>
+        </ol>
+    </li>
         
 </ol>
 
