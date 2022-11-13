@@ -49,8 +49,12 @@
     </li>
         
 </ol>
+<br>
 
-
-
+   <h4>Some minor-resources</h4>
+   <ol>
+            <li><a src='https://www.bigocheatsheet.com/' style="font-size:10px;" >Complexities Cheatsheet</a></li>
+    </ol>
+        
 
 </p>
