@@ -44,6 +44,7 @@
         <ol>
             <h3>Stacks</h3>
             <li>Maximum-Element</li>
+            <li>balanced-brackets</li>
         </ol>
     </li>
         
