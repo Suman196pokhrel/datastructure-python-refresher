@@ -61,7 +61,7 @@
 
    <h4>Some minor-resources</h4>
    <ol>
-            <li><a  target="_blank" href='https://www.bigocheatsheet.com/' style="font-size:10px;"> Complexities Cheatsheet</a></li>
+            <li><a  href='https://www.bigocheatsheet.com/' target="_blank" rel="noreferrer noopener"  style="font-size:10px;"> Complexities Cheatsheet</a></li>
     </ol>
         
 
