@@ -12,7 +12,7 @@
 
 </ol>
 <br>
-<h2><a href="https://www.hackerrank.com/spokhrel196">HackerRank Problems</a></h2>
+<h2><a href="https://www.hackerrank.com/spokhrel196">HackerRank Profile</a></h2>
 
 <ol>
     <li>
