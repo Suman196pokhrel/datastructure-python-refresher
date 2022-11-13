@@ -6,7 +6,6 @@ class TreeNode:
         self.children = []
         self.parent = None
 
-
     def __str__(self):
         spaces = "    " * self.get_level() * 3
         print( spaces + "|__" + str(self.data))

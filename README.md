@@ -9,6 +9,7 @@
 <li> Hash Tables</li>
 <li> Stacks</li>
 <li> Queue</li>
+<li> TREES </li>
 
 </ol>
 <br>
@@ -53,6 +54,12 @@
     <li>
         <ol>
             <h3>Queue</h3>
+        </ol>
+    </li>
+    <br>
+    <li>
+        <ol>
+            <h3>Trees</h3>
         </ol>
     </li>
         
